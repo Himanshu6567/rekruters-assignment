@@ -1,75 +1,62 @@
+
 import { GiGraduateCap } from "react-icons/gi";
-import { FaPencilAlt, FaLongArrowAltRight } from "react-icons/fa";
+import { FaPencilAlt, FaArrowRight } from "react-icons/fa";
 import { tests } from "./tests.json";
 
 const TestCards = () => {
   return (
-    <div className="px-6 py-12 mx-auto max-w-7xl">
-      <div className="flex flex-col items-center justify-between mb-10 md:flex-row md:pr-10">
-        <h2 className="text-4xl font-extrabold text-center text-gray-800 md:text-left">
-          Most Popular Tests
+    <div className="z-0 px-6 py-12 mx-auto max-w-7xl">
+      <div className="bg-yellow-400 w-[700px] h-[1000px] absolute  -z-20 transform rotate-45"></div>
+      <div className="bg-green-400 w-[700px] h-[500px] absolute    right-0 -z-20 transform rotate-45"></div>
+
+      <div  className="flex flex-col items-center justify-between mb-10 md:flex-row md:pr-10">
+        <h2 className="text-4xl font-bold text-gray-900 md:text-left">
+          Popular Tests!
         </h2>
-        <span className="flex items-center justify-center px-4 py-2 font-bold text-orange-900 transition-all cursor-pointer hover:text-orange-600">
-          VIEW ALL <FaLongArrowAltRight className="ml-2 text-lg" />
-        </span>
+        <button className="flex items-center px-5 py-2 text-lg font-semibold transition-all rounded-lg hover:underline">
+          VIEW ALL <FaArrowRight className="ml-2" />
+        </button>
       </div>
-      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
+      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {tests.map((test, index) => (
           <div
             key={index}
-            className="relative flex flex-col p-6 py-4 transition-all transform bg-white border border-gray-200 shadow-md rounded-xl hover:-translate-y-2 h-96 hover:shadow-xl"
+            className="relative flex flex-row items-center p-6 space-x-4 transition-all bg-white border border-gray-200 shadow-lg rounded-2xl hover:shadow-xl hover:border-indigo-400"
           >
-            <div className="absolute px-3 py-1 text-xs font-semibold text-white bg-orange-500 rounded-lg top-3 right-3">
-              {test.category}
-            </div>
-            <div className="flex justify-center">
+            <div className="flex-shrink-0">
               <img
                 src={test.icon}
                 alt={test.title}
-                className="w-20 h-20 "
+                className="object-contain w-24 h-24 rounded-lg"
               />
             </div>
-            <h3 className="mt-5 text-xl font-semibold text-center text-gray-800">
-              {test.title}
-            </h3>
-            <p className="mt-2 text-sm text-center text-gray-600">
-              {test.category}
-            </p>
-            <div className="mt-4 space-y-2">
-              <p className="flex items-center justify-between gap-1 px-6 text-sm font-medium text-gray-700 ">
-                <span className="flex space-x-1">
-                  <GiGraduateCap className="text-lg text-[#3C61A8]" />
-                  <span> Ranked Youth:</span>
-                </span>
-                <span className="font-bold text-lg text-[#3C61A8]">
-                  {test.ranked_youth}+
-                </span>
-              </p>
-              <p className="flex items-center justify-between gap-1 px-6 text-sm font-medium text-gray-700 ">
-                <span className="flex space-x-1">
-                  <FaPencilAlt className="text-lg text-[#3C61A8]" />
-                  <span> Attempts:</span>
-                </span>
-                <span className="font-bold text-lg text-[#3C61A8]">
-                  {test.attempts}+
-                </span>
-              </p>
-            </div>
-
-            <div className="wrapper">
-              <div className="link_wrapper">
-                <a id="a" href="#">
-                  Start Test!
-                </a>
-                <div className="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 268.832 268.832"
-                  >
-                    <path d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z" />
-                  </svg>
+            <div className="flex-grow">
+              <span className="inline-block px-3 py-1 mb-2 text-xs font-semibold bg-gray-100 rounded-full text-gray">
+                {test.category}
+              </span>
+              <h3 className="text-lg font-semibold text-gray-900">
+                {test.title}
+              </h3>
+              <div className="mt-3 space-y-2 text-gray-700">
+                <div className="flex items-center space-x-2">
+                  <GiGraduateCap className="text-xl text-indigo-600" />
+                  <span className="text-sm">Ranked Youth: </span>
+                  <span className="text-lg font-bold text-gray-900">
+                    {test.ranked_youth}+
+                  </span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <FaPencilAlt className="text-xl text-indigo-600" />
+                  <span className="text-sm">Attempts: </span>
+                  <span className="text-lg font-bold text-gray-900">
+                    {test.attempts}+
+                  </span>
                 </div>
               </div>
+              <button className="flex items-center justify-center w-full py-2 mt-4 space-x-2 font-semibold text-center text-white transition-all bg-gray-900 rounded-lg shadow-md hover:text-gray-900 hover:bg-gray-200">
+                <span>Start Test!</span>
+                <FaArrowRight />
+              </button>
             </div>
           </div>
         ))}
