@@ -17,7 +17,8 @@ no-scrollbar::-webkit-scrollbar {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  /* font-family: "Lato", sans-serif; */
+  font-family: "Serif";
 }
 
 .wrapper {

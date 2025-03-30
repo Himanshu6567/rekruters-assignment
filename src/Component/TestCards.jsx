@@ -2,7 +2,6 @@ import { GiGraduateCap } from "react-icons/gi";
 import { FaPencilAlt, FaLongArrowAltRight } from "react-icons/fa";
 import { tests } from "./tests.json";
 
-
 const TestCards = () => {
   return (
     <div className="px-6 py-12 mx-auto max-w-7xl">
@@ -27,7 +26,7 @@ const TestCards = () => {
               <img
                 src={test.icon}
                 alt={test.title}
-                className="object-cover w-20 h-20 "
+                className="w-20 h-20 "
               />
             </div>
             <h3 className="mt-5 text-xl font-semibold text-center text-gray-800">
@@ -37,22 +36,31 @@ const TestCards = () => {
               {test.category}
             </p>
             <div className="mt-4 space-y-2">
-              <p className="flex items-center justify-center gap-2 text-sm font-medium text-gray-700">
-                <GiGraduateCap className="text-lg text-blue-600" /> Ranked
-                Youth:
-                <span className="font-bold text-blue-600">
+              <p className="flex items-center justify-between gap-1 px-6 text-sm font-medium text-gray-700 ">
+                <span className="flex space-x-1">
+                  <GiGraduateCap className="text-lg text-[#3C61A8]" />
+                  <span> Ranked Youth:</span>
+                </span>
+                <span className="font-bold text-lg text-[#3C61A8]">
                   {test.ranked_youth}+
                 </span>
               </p>
-              <p className="flex items-center justify-center gap-2 text-sm font-medium text-gray-700">
-                <FaPencilAlt className="text-lg text-gray-600" /> Attempts:
-                <span className="font-semibold">{test.attempts}+</span>
+              <p className="flex items-center justify-between gap-1 px-6 text-sm font-medium text-gray-700 ">
+                <span className="flex space-x-1">
+                  <FaPencilAlt className="text-lg text-[#3C61A8]" />
+                  <span> Attempts:</span>
+                </span>
+                <span className="font-bold text-lg text-[#3C61A8]">
+                  {test.attempts}+
+                </span>
               </p>
             </div>
-            
+
             <div className="wrapper">
               <div className="link_wrapper">
-                <a  id="a" href="#">Start Test!</a>
+                <a id="a" href="#">
+                  Start Test!
+                </a>
                 <div className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,8 +71,6 @@ const TestCards = () => {
                 </div>
               </div>
             </div>
-
-         
           </div>
         ))}
       </div>
